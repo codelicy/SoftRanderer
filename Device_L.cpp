@@ -26,7 +26,7 @@ void Device_L::initialize(int w,int h,void* framebuf)
 	mTheta = 1.5f * Math_L::Pi;
 	mPhi  = 0.4f * Math_L::Pi;
 	mRadius = 5.0f;
-	m_Optimized = 1;//默认开启光栅化优化
+	m_Optimized = 1;//默认edgefunction优化
 	m_pModel=new Model();
 	m_pTexture = new TextureL();
 
@@ -233,7 +233,7 @@ void Device_L::FillTriangleC(Vertex& v0, Vertex& v1, Vertex& v2)
 	Vec4 Vweight = { 0,0,0,Math_L::EdgeFunc(v0.pos, v1.pos, v2.pos) };
 
 	//start inside-outside test
-	if (m_Optimized) //edgefunction光栅化伪优化算法
+	if (m_Optimized) //edgefunction伪优化算法
 	{
 		//关于edgefunction优化算法
 		//ref:http://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation
@@ -363,11 +363,11 @@ bool Device_L::TriangleCheck(const Vertex& v0,const Vertex& v1, const Vertex& v2
 //perspective correct interpolation
 void Device_L::Interpolate(const Vertex& v0, const Vertex& v1, const Vertex& v2, Vertex& pixelSamp, const Vec4& Vw)
 {
-	// Find z-coordinate,treat as the interpolation coefficient
+	// Find z-coordinate of the samplepixel,treat as the interpolation coefficient
 	//according to formula :	1/p.z = lambda0/v0.z+lambda1/v1.z+lambda2/v2.z
 	//ref:http://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/visibility-problem-depth-buffer-depth-interpolation
 	pixelSamp.pos.z = 1.f / (Vw.x + Vw.y + Vw.z);
-	//XY坐标循环中获取,这里可略去pos插值
+	//XY坐标由循环中获取,略去pos插值
 	//pixelSamp.pos = (v0.pos*Vw.x + v1.pos*Vw.y + v2.pos*Vw.z)*pixelSamp.pos.z;//
 	if(m_randermode==Rander_State_Color)//顶点色插值
 		pixelSamp.color = (v0.color*Vw.x + v1.color*Vw.y + v2.color*Vw.z)*pixelSamp.pos.z;//
