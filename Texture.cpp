@@ -37,8 +37,7 @@ bool TextureL::LoadBmp(const std::string& filename)
 }
 //纹理映射
 //据D3D12龙书，共有wrap,border color,clamp,mirror4种不同的映射寻址方式
-//在处理3D模型的缩放时，需要使用纹理过滤功能，消耗较大,
-//因在下的商务笔记本不能平滑的支持，暂不实现过滤功能.
+//在处理3D模型的缩放时,需要使用纹理过滤功能,暂不实现过滤功能.
 UINT TextureL::SampColor(Vec4& tc)
 {
 	float u = Math_L::Clamp(tc.x, 0.f, 1.f);
