@@ -160,7 +160,7 @@ LRESULT CALLBACK OnEvent(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 			TextOutX(hdcBackBuffer, 5, 5 + 20 * 3, "N: next scene");
 			//TextOutX(hdcBackBuffer, 5, 5 + 20 * 4, "C: on-off optimizing");
 			TextOutX(hdcBackBuffer, 5, 5 + 20 * 4, "MouseWheel: Scale");
-			//把backbuffer内容传到frontbuffer
+			//backbuffer内容传到frontbuffer
 			BitBlt(ps.hdc, 0, 0, cxClient, cyClient, hdcBackBuffer, 0, 0, SRCCOPY);
 			EndPaint(hwnd, &ps);
 		}

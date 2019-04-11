@@ -348,7 +348,7 @@ void Device_L::FillTriangleT(Vertex& v0, Vertex& v1, Vertex& v2)
 //we will use this lambda to interpolate
 bool Device_L::TriangleCheck(const Vertex& v0,const Vertex& v1, const Vertex& v2, Vertex& p, Vec4& Vw)
 {
-	// lambda0,lambda1,lambda2 stored in Vector weight,//multiply 1 / Z which stored in pos.w
+	// lambda0,lambda1,lambda2 stored in Vector weight,multiply 1 / Z which stored in pos.w
 	//注意三个顶点的传入顺序将影响颜色分量的位置分布	
 	//float w0 = Math_L::EdgeFunc(v1.pos, v2.pos, p.pos);
 	//float w1 = Math_L::EdgeFunc(v2.pos, v0.pos, p.pos);
