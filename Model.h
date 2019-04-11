@@ -11,8 +11,6 @@
 #include <windows.h>
 #include "VectorL.h"
 
-
-
 struct Vertex
 {
 	Vec4 pos, color,uv;

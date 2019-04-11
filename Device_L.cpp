@@ -1,4 +1,5 @@
 /*file:Device_L.cpp*/
+
 #include"DeviceL.h"
 
 void Device_L::Destroy()
@@ -9,7 +10,6 @@ void Device_L::Destroy()
 		delete m_pFrameBuffer;
 	if (m_zBuffer)
 		delete[] m_zBuffer;
-
 }
 void Device_L::initialize(int w,int h,void* framebuf)
 {
@@ -26,7 +26,7 @@ void Device_L::initialize(int w,int h,void* framebuf)
 	mTheta = 1.5f * Math_L::Pi;
 	mPhi  = 0.4f * Math_L::Pi;
 	mRadius = 5.0f;
-	m_Optimized = 1;//默认开启光栅化优化算法
+	m_Optimized = 1;//默认开启光栅化优化
 	m_pModel=new Model();
 	m_pTexture = new TextureL();
 

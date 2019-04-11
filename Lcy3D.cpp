@@ -26,7 +26,7 @@
 const int screen_w = 800;
 const int screen_h = 600;
 UINT gModelIndex = 1; //mesh index 0=box,1=triangle
-//float RotDegree = 1.f; //自旋角度dgree
+//float RotDegree = 1.f; //自旋角度
 static HWND ghwnd;   //窗口句柄
 
 std::unique_ptr<Device_L> device = std::make_unique<Device_L>();

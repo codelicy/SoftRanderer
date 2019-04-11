@@ -7,7 +7,6 @@ struct Vec4
 	Vec4(float xx,float yy):x(xx),y(yy),z(0),w(0){} //表示纹理坐标uv
 	Vec4(float xx, float  yy, float zz, float ww=0) :x(xx), y(yy), z(zz), w(ww) {};//可表示向量、颜色
 	Vec4 operator +(const Vec4& rhs) const { return Vec4(x + rhs.x, y + rhs.y, z + rhs.z, 0.f); }
-
 	Vec4 operator-() { return Vec4(-x, -y, -z, -w); }
 	Vec4 operator-(const Vec4& rhs) const { return Vec4(x - rhs.x, y - rhs.y, z - rhs.z, w-rhs.w); }
 	Vec4 operator*(const float& r) const { return Vec4(x*r, y*r, z*r, w*r); }

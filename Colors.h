@@ -2,6 +2,7 @@
 namespace Colors_L
 {
 	// Standard colors (Red/Green/Blue/Alpha)
+	//copy from D3D
 	Vec4 AliceBlue = { 0.941176534f, 0.972549081f, 1.000000000f, 1.000000000f };
 	Vec4 AntiqueWhite = { 0.980392218f, 0.921568692f, 0.843137324f, 1.000000000f };
 	Vec4 Aqua = { 0.000000000f, 1.000000000f, 1.000000000f, 1.000000000f };

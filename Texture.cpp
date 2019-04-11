@@ -26,7 +26,8 @@ bool TextureL::LoadBmp(const std::string& filename)
 	{
 		//只处理24位或32位二种常见位图形式,丢弃alpha通道
 		//BGRA to RGBA or BGR to RGB
-		data[i] = RGB(tmp[cnts + 2], tmp[cnts + 1], tmp[cnts + 0]);//使用windows内置RGB宏,或者用Math_L中自定义转换函数
+		//使用windows内置RGB宏,或者使用Math_L中自定义颜色转换函数ColorToUINT()
+		data[i] = RGB(tmp[cnts + 2], tmp[cnts + 1], tmp[cnts + 0]);
 		cnts += bytes;
 		if (cnts + paddings >= rowcountBytes && (cnts + paddings) % rowcountBytes == 0)
 			cnts += paddings;//skip paddings
@@ -38,7 +39,6 @@ bool TextureL::LoadBmp(const std::string& filename)
 //据D3D12龙书，共有wrap,border color,clamp,mirror4种不同的映射寻址方式
 //在处理3D模型的缩放时，需要使用纹理过滤功能，消耗较大,
 //因在下的商务笔记本不能平滑的支持，暂不实现过滤功能.
-
 UINT TextureL::SampColor(Vec4& tc)
 {
 	float u = Math_L::Clamp(tc.x, 0.f, 1.f);

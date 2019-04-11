@@ -26,7 +26,6 @@ struct Device_L
 	int m_width,m_height;   // 窗口宽、高
 	RanderMode m_randermode;  //渲染模式1线框2颜色3纹理
 	UINT* m_pFrameBuffer;
-	//HDC screen_hdc;  
 	float* m_zBuffer;  //z 缓存
 	Matrix4 mWorld, mView, mProj,mvp,mScale;//空间转换矩阵
 	float mTheta;//鼠标控制

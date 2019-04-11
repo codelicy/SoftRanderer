@@ -6,11 +6,9 @@
 **********************************************/
 
 #pragma once
-//#include <vector>
 #include <windows.h>
 #include <algorithm>
 #include "Matrix.h"
-
 
 namespace Math_L
 {

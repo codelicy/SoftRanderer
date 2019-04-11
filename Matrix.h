@@ -42,10 +42,14 @@ struct Matrix4
 	}
 	/*
 	Matrix4& operator=(const Matrix4& rhs) {
+		if(rhs==this)
+			return this;
+		else{
 		for (int i = 0; i < 4; ++i)
 			for (int j = 0; j < 4; ++j)
 				m[i][j] = rhs.m[i][j];
 		return *this;
+		}
 	}*/
 	Matrix4 operator*(const Matrix4& rhs) const {
 		Matrix4 t;

@@ -6,9 +6,10 @@ void Model::CreateTriangle3D()
 {
 	/*
 	//在类成员函数中使用new申请内存时，涉及到类的动态内存管理，
-	//需要在类析构函数中释放new出来的堆内存,否则将造成内存泄漏。
+	//需要在类析构函数中释放new出来的堆内存。
 	//或者可以使用std::unique_ptr智能指针管理对象,这里使用智能指针
 	//智能指针参考 https://zh.cppreference.com/w/cpp/memory/unique_ptr
+	//对于智能指针的理解是否有问题，烦请提出
 	*/
 	Mesh* meshTri =new Mesh();
 	Vertex v[5];
@@ -40,7 +41,7 @@ void Model::CreateBox3D()
 	Vertex v[24];
 
 	//正方体在纹理渲染时，需要6面24个顶点数据，才能满足纹理UV坐标，
-	//否则在使用具有几何型图案的bmp时，会导致图案的拉伸和扭曲。
+	//否则在使用具有几何型图案的bmp时，会导致图案的拉伸和扭曲,请自行测试
 	//线框模式和顶点色模式因不含UV坐标值，渲染只需要提供8个顶点
 	//前侧
 	v[0] = Vertex({ -1.f, -1.f, -1.f,1.f }, Colors_L::Blue, {0.f,1.f});//左下

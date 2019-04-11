@@ -11,7 +11,7 @@ struct TextureL
 	int height;
 	UINT* data;
 
-	//º”‘ÿbmp
+	//º”‘ÿBMP
 	bool LoadBmp(const std::string& filename);
 	//Œ∆¿Ì”≥…‰
 	UINT SampColor(Vec4& tc);

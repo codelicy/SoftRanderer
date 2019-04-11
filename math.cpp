@@ -60,7 +60,8 @@ Matrix4 Math_L::MatrixSetLookAt(const Vec4& look, const Vec4& at, const Vec4& up
 		-xaxis.Dot(look), -yaxis.Dot(look), -zaxis.Dot(look), 1);
 }
 /***********************************************
-获取投影矩阵  D3DXMatrixPerspectiveFovLH
+参考D3D11 龙书
+获取投影矩阵  D3DXMatrixPerspectiveFovLH 
 	fovY ----vertical field of view  angle in radians
 	aspectRatio = width / heigth
 	nearZ -----distance to near plane
