@@ -21,10 +21,8 @@ struct Vertex
 };
 struct Mesh
 {
-	std::vector<Vertex> VertexBuffer;
 	std::vector<UINT> IndexBuffer;
-	//std::vector<Mesh*> ModelList;
-
+	std::vector<Vertex> VertexBuffer;
 };
 struct Model
 {
